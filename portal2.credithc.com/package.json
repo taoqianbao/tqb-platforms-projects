@@ -1,0 +1,27 @@
+{
+  "name": "统一认证应用平台",
+  "version": "1.0.0",
+  "description": "统一认证应用平台",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "svn",
+    "url": "http://itc-svn01.credithc-sh.com/svn/fe/trunk/ssoApp"
+  },
+  "keywords": [
+    "fis",
+    "恒昌",
+	"技术服务共享中心",
+	"统一认证应用平台"
+  ],
+  "author": "Peter Zhu",
+  "license": "BSD",
+  "bugs": {
+    "url": "http://192.168.3.12/"
+  },
+  "homepage": "http://192.168.21.1/ssoApp",
+  "dependencies": {
+  }
+}

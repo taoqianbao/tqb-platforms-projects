@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>恒昌-技术服务共享中心</title>
+    <meta charset="utf-8" />
+    <link href="./Content/bootstrap.css" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <script src="./Scripts/jquery-1.11.3.js"></script>
+    <script src="./Scripts/bootstrap.js"></script>
+    <link href="./Content/font-awesome.min.css" rel="stylesheet" />
+    <style type="text/css">
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            function adjuestIframeSize() {
+                var h = $(window).height() - 60;
+                $("#iframeMain").height(h);
+            }
+
+            adjuestIframeSize();
+
+            $(window).resize(function () {
+                adjuestIframeSize();
+            });
+
+
+            if (window.localStorage) {
+
+                var isOpen = window.localStorage.getItem("hc-sidebar-open");
+
+                if (isOpen != null && isOpen == "true") {
+                    $("div.viewFramework-body").addClass("viewFramework-sidebar-full");
+                } else {
+                    $("div.viewFramework-body").removeClass("viewFramework-sidebar-full");
+                }
+            }
+
+            $("a.topbar-logo").bind("click", function () {
+
+                if ($("div.viewFramework-body").hasClass("viewFramework-sidebar-full")) {
+                    $("div.viewFramework-body").removeClass("viewFramework-sidebar-full");
+                    //$("div.viewFramework-sidebar").hide(1500);
+                    window.localStorage.setItem("hc-sidebar-open", "false");
+                } else {
+                    window.localStorage.setItem("hc-sidebar-open", "true");
+                    $("div.viewFramework-body").addClass("viewFramework-sidebar-full");
+                    //$("div.viewFramework-sidebar").show();
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="viewFramework-topbar">
+
+        <div class="aliyun-console-topbar">
+
+            <div class="topbar-wrap topbar-clearfix">
+
+                <div class="topbar-head topbar-left">
+                    <a class="topbar-logo topbar-left">
+                        <span class="glyphicon glyphicon-th-large"></span>
+                    </a>
+                    <a class="topbar-home-link topbar-btn topbar-left">
+                        恒昌技术共享服务中心
+                    </a>
+                </div>
+
+                <div class="topbar-info topbar-right">
+
+
+                    <div class="topbar-left">
+                        <span class="topbar-info-gap"></span>
+                        <div class="dropdown topbar-info-item">
+                            <a href="#" class="dropdown-toggle topbar-btn" data-toggle="dropdown">
+                                <span></span><span class="icon-arrow-down"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="viewFramework-body viewFramework-sidebar-full">
+
+        <div class="viewFramework-sidebar">
+            <div class="sidebar-content">
+
+                <div class="sidebar-inner">
+
+                    <!--
+                    <div class="sidebar-fold">
+                        <span class="glyphicon glyphicon-fullscreen"></span>
+                    </div>
+                    -->
+
+                    <div class="sidebar-nav main-nav">
+
+                        <div style="color:white; text-align:center; height:30px; line-height:30px;">
+                            统一认证中心
+                        </div>
+
+                        <div class="sidebar-title">
+                            <div class="sidebar-title-inner">
+                                <span class="glyphicon glyphicon-triangle-bottom sidebar-title-icon"></span>
+                                <!--<span class="glyphicon glyphicon-triangle-top"></span>-->
+                                <span class="sidebar-title-text">系统应用</span>
+                            </div>
+                        </div>
+
+                        <ul class="sidebar-trans">
+                            <li class="nav-item">
+                                <a href="home.html" target="iframeMain">
+                                    <div class="nav-icon">
+                                        <span class="glyphicon glyphicon-dashboard sidebar-title-icon"></span>
+                                    </div>
+                                    <span class="nav-title">DashBoard</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="viewFramework-product">
+
+            <div class="viewFramework-product-body">
+
+                <div class="home-container">
+
+                    <iframe name="iframeMain" id="iframeMain" src="home.html" style="width:100%; height:100%; min-height:300px; margin:0px; padding:0px; border:none;"></iframe>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="clearfix">
+            </div>
+
+            <div style="height:10px; width:100%;"></div>
+        </div>
+    </div>
+</body>
+
+</html>
