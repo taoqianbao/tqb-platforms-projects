@@ -17,7 +17,7 @@
 	"统一认证应用平台"
   ],
   "author": "Peter Zhu",
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
     "url": "http://192.168.3.12/"
   },
